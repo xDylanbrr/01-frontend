@@ -4,10 +4,47 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
+    <title>HELLO WORLD</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #0f172a;
+      }
+
+      h1 {
+        font-family: monospace;
+        font-size: 3rem;
+        color: #00f5ff;
+        border-right: 3px solid #00f5ff;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        animation: typing 3s steps(11) forwards, blink 0.7s infinite step-end alternate;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 11ch; /* número de caracteres en HELLO WORLD */
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <h1>HELLO WORLD</h1>
+    <script type="module" src="/src/index.js"></script>
   </body>
 </html>
