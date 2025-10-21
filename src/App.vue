@@ -10,7 +10,7 @@ interface Empleado {
 }
 
 // --- Configuración ---
-const API_URL = 'https://zero2-backend-2.onrender.com/empleado';
+const API_URL = 'http://localhost:4001';
 const MAX_RETRIES = 3;
 const DELAY_MS = 1000;
 
