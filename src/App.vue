@@ -10,7 +10,7 @@ interface Empleado {
 }
 
 // --- Configuración ---
-const API_URL = 'http://localhost:4001';
+const API_URL = 'https://zero3-backend-nlcp.onrender.com';
 const MAX_RETRIES = 3;
 const DELAY_MS = 1000;
 
@@ -57,7 +57,7 @@ const obtenerEmpleados = async () => {
   empleados.value = [];
   esError.value = false;
   try {
-    const response = await fetchWithRetry(`${API_URL}/empleado`, { method: 'GET' });
+    const response = await fetchWithRetry(`${API_URL}/empleados`, { method: 'GET' });
     const data: Empleado[] = response.data;
     empleados.value = data.sort((a, b) => a.id_empleado - b.id_empleado);
     mostrarMensaje(`Lista actualizada (${data.length}) empleados`);
@@ -78,7 +78,7 @@ const agregarEmpleado = async () => {
   }
   isLoading.value = true;
   try {
-    await fetchWithRetry(`${API_URL}/empleado`, { method: 'POST', data: { nombre } });
+    await fetchWithRetry(`${API_URL}/empleados`, { method: 'POST', data: { nombre } });
     nombreInput.value = '';
     mostrarMensaje(`Empleado "${nombre}" agregado ✅`);
     await obtenerEmpleados();
